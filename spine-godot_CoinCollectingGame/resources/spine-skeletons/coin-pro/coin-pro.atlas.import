@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+path="res://.import/coin-pro.atlas-af43d96ccf0ffa66d7203451e90dfc47.spatlas"
+
+[deps]
+
+source_file="res://resources/spine-skeletons/coin-pro/coin-pro.atlas"
+dest_files=[ "res://.import/coin-pro.atlas-af43d96ccf0ffa66d7203451e90dfc47.spatlas" ]
+
+[params]
+
+normal_map_prefix="n"
