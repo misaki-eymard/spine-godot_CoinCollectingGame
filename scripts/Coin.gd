@@ -15,6 +15,6 @@ func _on_Area2D_body_entered(body):
 		coin_get_collision.queue_free()
 
 
-func _on_Coin_animation_completed(spine_sprite, animation_state, track_entry):
+func _on_Coin_animation_completed(_spine_sprite, _animation_state, track_entry):
 	if track_entry.get_animation().get_name() == "get_normal":
 		self.queue_free()

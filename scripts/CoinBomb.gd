@@ -16,7 +16,7 @@ func _ready():
 	coin.get_animation_state().add_animation("idle_bomb", 0, true, 0)
 
 
-func _on_BombCoin_animation_completed(spine_sprite, animation_state, track_entry):
+func _on_BombCoin_animation_completed(_spine_sprite, _animation_state, track_entry):
 	if track_entry.get_animation().get_name() == "caution":
 		bomb_hit_collision.set_disabled(false)
 	if track_entry.get_animation().get_name() == "get_bomb":
