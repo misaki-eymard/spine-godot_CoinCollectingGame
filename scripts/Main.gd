@@ -1,109 +1,94 @@
 extends Node2D
 
-onready var gameover_canvas: CanvasLayer = $CanvasGameOver
+onready var game_over_canvas: CanvasLayer = $GameOverCanvas
 
-onready var player: Node2D = $Player
+onready var player: KinematicBody2D = $Player
 
-onready var player_kinematicBody2D: KinematicBody2D = $Player/PlayerKinematicBody2D
-
-onready var time_label: Label = $CanvasMain/Control/TimeLabel # Label to show remaining game time
-
-onready var coin_label: Label = $CanvasMain/Control/CoinsTotal # Label to show collected coins total
+onready var coins_total_label: Label = $MainCanvas/CoinsTotal # Label to show collected coins total
 
 onready var game_timer: Timer = $GameTimer # Remaining game time
 
-onready var coin_spawn_points: Node2D = $Level/CoinPositions
+onready var coin_spawn_points: Node2D = $Level/CoinSpawnPoints
 
-var Coin = preload("res://scenes/Coin.tscn")
+onready var coin_spawn_points_array = coin_spawn_points.get_children()
 
-var can_generate_coins : bool = true
+onready var coin_spawn_points_count = coin_spawn_points_array.size()
+
+const NormalCoin = preload("res://scenes/NormalCoin.tscn")
+
+const BombCoin = preload("res://scenes/BombCoin.tscn")
+
+var generation_probability_of_bomb : int = 10
 
 var coins_total : int = 0 # Total number of coins collected by Player
 
-var player_current_position : Vector2 # This is used to avoid coins being created in positions where it overlaps with Player
-
-var min_distance_from_other_coins : float = 200 # If there are other coins within a distance of this number, no coins are generated there.
+var min_distance_from_player : float = 200 # If there are other coins within a distance of this number, no coins are generated there.
 
 
 func _ready():
-	# Get Player's current position. This is used to avoid coins being created in positions where it overlaps with Player
-	get_player_current_position()
+	randomize()
 	
-	# Generate the first coin
-	spawn_coin()
 
-
-func _process(delta):
-	# Update the display of remaining time
-	time_label.text = "Time: " + str(game_timer.time_left).pad_decimals(0)
-	
-	# Get Player's current position. This is used to avoid coins being created in positions where it overlaps with Player
-	get_player_current_position()
+func add_coin() -> void:
+	# Add one to the number of coins collected by Player
+	coins_total += 1
+		
+	# Update the display of collected coins total
+	coins_total_label.text = "Coins: " + str(coins_total)
 
 
 # When the remaining game time runs out
 func _on_GameTimer_timeout():
-	# Stop generating coins
-	can_generate_coins = false
-	
-	# Disable Player's movement
-	player.can_move = false
-	
-	# Show canvas layer for game over
-	gameover_canvas.set_visible(true)
+	game_over()
 
 
-func _on_CoinTimer_timeout():
-	if can_generate_coins == true:
-		spawn_coin()
-	elif can_generate_coins == false:
-		pass
+func bomb_went_off() -> void:
+	player.current_player_state = "death"
+	game_timer.paused = true
+	game_over()
 
 
-# Generating a new coin
-func spawn_coin():
-	# Collect the reference points for the position of coin generation in an array
-	var coin_spawn_points_array = coin_spawn_points.get_children()
-	
-	# Draw only one of a total of 14 coin generation points at randum
-	var coin_parent = coin_spawn_points_array[randi() % 14]	
-	
-	# Check to see if the coin generation point already has coins
-	if coin_parent.get_child_count() == 0:	
-		# Check to see if Player is near that generation point
-		if coin_parent.position.distance_to(player_current_position) < min_distance_from_other_coins:
-			# Generating nothing due to Player is too close.
-			pass
-		elif  coin_parent.position.distance_to(player_current_position) > min_distance_from_other_coins:
-			# Generating a new coin
-			var coin_instance = Coin.instance()
-			coin_parent.add_child(coin_instance)
-	elif not coin_parent.get_child_count() == 0:
-		pass
+func game_over() -> void:
+	player.can_move = false # Disable Player's movement
+	game_over_canvas.set_visible(true) # Show canvas layer for game over
 
 
-func get_player_current_position():
-	player_current_position = player.position + player_kinematicBody2D.position
+func bomb_timer_timeout():
+	coins_total += 1  # Add one to the coins total as a bonus
+	coins_total_label.text = "Coins: " + str(coins_total) # Update the display of collected coins total
 
 
 func _on_ResetButton_pressed():
-	# Remove all coins that remain in the level
-	get_tree().call_group("Coins", "queue_free")
+	get_tree().reload_current_scene()
+
+
+func _on_SpawnCoinTimer_timeout():
+	if game_over_canvas.visible == false:
+		spawn_coin()
+	elif game_over_canvas.visible == true:
+		pass
+
+# Generating a new coin
+func spawn_coin():
+	# Draw one of coin generation points at random
+	var coin_parent = coin_spawn_points_array[randi() % coin_spawn_points_count]	
 	
-	# Reset the number of coins collected to 0
-	coins_total = 0
-	
-	# Reset the player's position
-	player_kinematicBody2D.position = Vector2(0,0)
-	
-	# Enables the generation of new coins
-	can_generate_coins = true
-	
-	# Enables Player's movement
-	player.can_move = true
-	
-	# Hide canvas layer for game over
-	gameover_canvas.set_visible(false)
-	
-	# Start the countdown for the remaining time of the game
-	game_timer.start()
+	if coin_parent.get_child_count() > 0:	
+		pass
+	# Check to see if the coin generation point already has coins
+	elif coin_parent.get_child_count() == 0:	
+		# Check to see if Player is near that generation point
+		if coin_parent.position.distance_to(player.position) < min_distance_from_player:
+			# Generating nothing due to Player is too close.
+			pass
+		elif  coin_parent.position.distance_to(player.position) > min_distance_from_player:
+			var coin_instance
+			var coin_types = randi() % 100
+			
+			if coin_types >= generation_probability_of_bomb:
+				# Generate a new  normal coin
+				coin_instance = NormalCoin.instance()
+			elif coin_types < generation_probability_of_bomb:
+				# Generate a new bomb coin
+				coin_instance = BombCoin.instance()
+			coin_parent.add_child(coin_instance)

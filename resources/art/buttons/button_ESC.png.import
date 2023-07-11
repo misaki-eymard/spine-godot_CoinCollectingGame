@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/restart.png-e87dc3b6e767b32c4354e3a566f5d3be.stex"
+path="res://.import/button_ESC.png-4a24e010dd5e7810f2725479128ca0eb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/restart.png"
-dest_files=[ "res://.import/restart.png-e87dc3b6e767b32c4354e3a566f5d3be.stex" ]
+source_file="res://resources/art/buttons/button_ESC.png"
+dest_files=[ "res://.import/button_ESC.png-4a24e010dd5e7810f2725479128ca0eb.stex" ]
 
 [params]
 

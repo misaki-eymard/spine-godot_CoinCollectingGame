@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resources/spine-skeletons/coin-pro/coin_dataresource.tres" type="SpineSkeletonDataResource" id=2]
+[ext_resource path="res://scripts/CoinBomb.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 29.75, 37.5 )
+
+[node name="BombCoin" type="Node2D" groups=["Coins"]]
+script = ExtResource( 4 )
+
+[node name="Coin" type="SpineSprite" parent="."]
+position = Vector2( 1, 0 )
+scale = Vector2( 0.2, 0.2 )
+skeleton_data_res = ExtResource( 2 )
+preview_skin = "Default"
+preview_animation = "idle_bomb"
+preview_frame = false
+preview_time = 0.0
+
+[node name="GetBombTimer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="AreaToHitBomb" type="Area2D" parent="."]
+position = Vector2( 2, 0 )
+collision_mask = 0
+
+[node name="CollisionForPlayer" type="CollisionShape2D" parent="AreaToHitBomb"]
+shape = SubResource( 3 )
+disabled = true
+
+[connection signal="animation_completed" from="Coin" to="." method="_on_BombCoin_animation_completed"]
+[connection signal="timeout" from="GetBombTimer" to="." method="_on_GetBombTimer_timeout"]
+[connection signal="body_entered" from="AreaToHitBomb" to="." method="_on_AreaToHitBomb_body_entered"]

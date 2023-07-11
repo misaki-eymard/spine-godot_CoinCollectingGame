@@ -1,0 +1,1 @@
+{"atlas_data":"bomb.png\nsize:256,256\nfilter:Linear,Linear\nadd_point\nbounds:158,92,32,32\ncaution\nbounds:132,156,64,64\nfx_bomb01\nbounds:2,2,88,88\nfx_bomb02\nbounds:92,26,64,64\nfx_bomb03\nbounds:2,92,128,128\n","normal_texture_prefix":"n","source_path":"res://resources/spine-skeletons/bomb/bomb.atlas"}

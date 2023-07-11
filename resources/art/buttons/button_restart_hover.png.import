@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button_ESC.png-d757154c4380fc05459e34d300612cf2.stex"
+path="res://.import/button_restart_hover.png-9f4bece1def56c1c02bb06f6c902d782.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/button_ESC.png"
-dest_files=[ "res://.import/button_ESC.png-d757154c4380fc05459e34d300612cf2.stex" ]
+source_file="res://resources/art/buttons/button_restart_hover.png"
+dest_files=[ "res://.import/button_restart_hover.png-9f4bece1def56c1c02bb06f6c902d782.stex" ]
 
 [params]
 
