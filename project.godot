@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="spine-godot-example_CoinCollectingGame"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://completed-examples/scenes/Main.tscn"
 
 [gui]
 

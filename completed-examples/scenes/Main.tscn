@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Level.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scripts/Time.gd" type="Script" id=4]
+[ext_resource path="res://completed-examples/scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://completed-examples/scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://completed-examples/scenes/Level.tscn" type="PackedScene" id=3]
+[ext_resource path="res://completed-examples/scripts/Time.gd" type="Script" id=4]
 [ext_resource path="res://resources/art/buttons/button_restart_normal.png" type="Texture" id=5]
 [ext_resource path="res://resources/art/gameover.png" type="Texture" id=6]
 [ext_resource path="res://resources/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=8]
@@ -11,7 +11,7 @@
 [ext_resource path="res://resources/art/buttons/button_restart_hover.png" type="Texture" id=10]
 [ext_resource path="res://resources/art/buttons/button_ESC.png" type="Texture" id=11]
 [ext_resource path="res://resources/art/buttons/button_ESC_pressed.png" type="Texture" id=12]
-[ext_resource path="res://scripts/HelpPanel.gd" type="Script" id=13]
+[ext_resource path="res://completed-examples/scripts/HelpPanel.gd" type="Script" id=13]
 
 [sub_resource type="InputEventAction" id=7]
 action = "restart"

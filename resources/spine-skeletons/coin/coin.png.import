@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coin-pro.png-b6d0b8db20bb988ccb71c8ac24b01707.stex"
+path="res://.import/coin.png-9b9e647f46076eda52968249cff5e59d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/spine-skeletons/coin-pro/coin-pro.png"
-dest_files=[ "res://.import/coin-pro.png-b6d0b8db20bb988ccb71c8ac24b01707.stex" ]
+source_file="res://resources/spine-skeletons/coin/coin.png"
+dest_files=[ "res://.import/coin.png-9b9e647f46076eda52968249cff5e59d.stex" ]
 
 [params]
 

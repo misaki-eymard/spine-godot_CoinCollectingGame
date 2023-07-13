@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://resources/spine-skeletons/spineboy/spineboy_dataresource.tres" type="SpineSkeletonDataResource" id=2]
-[ext_resource path="res://scripts/Player.gd" type="Script" id=3]
+[ext_resource path="res://completed-examples/scripts/Player.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40.5, 92.1246 )

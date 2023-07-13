@@ -14,9 +14,9 @@ onready var coin_spawn_points_array = coin_spawn_points.get_children()
 
 onready var coin_spawn_points_count = coin_spawn_points_array.size()
 
-const NormalCoin = preload("res://scenes/NormalCoin.tscn")
+const NormalCoin = preload("res://completed-examples/scenes/NormalCoin.tscn")
 
-const BombCoin = preload("res://scenes/BombCoin.tscn")
+const BombCoin = preload("res://completed-examples/scenes/BombCoin.tscn")
 
 var generation_probability_of_bomb : int = 10
 
