@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resources/spine-skeletons/spineboy/spineboy_dataresource.tres" type="SpineSkeletonDataResource" id=2]
+[ext_resource path="res://completed-examples/completed-scripts/completed-Player.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40.5, 92.1246 )
+
+[node name="Player" type="KinematicBody2D" groups=["Player"]]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+position = Vector2( -2.50073, -91.8725 )
+rotation = -0.000833303
+shape = SubResource( 1 )
+
+[node name="SpineSprite" type="SpineSprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+skeleton_data_res = ExtResource( 2 )
+preview_skin = "Default"
+preview_animation = "-- Empty --"
+preview_frame = false
+preview_time = 0.0

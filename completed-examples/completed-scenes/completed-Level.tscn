@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resources/art/tile.png" type="Texture" id=1]
+[ext_resource path="res://completed-examples/completed-scenes/completed-Platform.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 512, 24 )
+
+[node name="Level" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+show_behind_parent = true
+position = Vector2( 512, 576 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource( 2 )
+
+[node name="FloorSprite" type="Sprite" parent="Floor"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 16, 0, 1024, 48 )
+
+[node name="LeftPlatform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 224, 360 )
+
+[node name="RightPlatform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 800, 360 )
+
+[node name="CoinSpawnPoints" type="Node2D" parent="."]
+
+[node name="CoinSpawnPoint01" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 100, 85 )
+
+[node name="CoinSpawnPoint02" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 300, 85 )
+
+[node name="CoinSpawnPoint03" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 500, 85 )
+
+[node name="CoinSpawnPoint04" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 700, 85 )
+
+[node name="CoinSpawnPoint05" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 900, 85 )
+
+[node name="CoinSpawnPoint06" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 200, 204 )
+
+[node name="CoinSpawnPoint07" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 400, 204 )
+
+[node name="CoinSpawnPoint08" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 600, 202 )
+
+[node name="CoinSpawnPoint09" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 800, 202 )
+
+[node name="CoinSpawnPoint10" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 100, 452 )
+
+[node name="CoinSpawnPoint11" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 300, 452 )
+
+[node name="CoinSpawnPoint12" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 500, 450 )
+
+[node name="CoinSpawnPoint13" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 700, 450 )
+
+[node name="CoinSpawnPoint14" type="Position2D" parent="CoinSpawnPoints"]
+position = Vector2( 900, 450 )
