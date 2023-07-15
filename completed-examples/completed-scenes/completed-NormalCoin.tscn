@@ -23,4 +23,5 @@ preview_time = 0.0
 position = Vector2( -1, -9 )
 shape = SubResource( 1 )
 
+[connection signal="animation_completed" from="Coin" to="." method="_on_Coin_animation_completed"]
 [connection signal="body_entered" from="CoinArea" to="." method="_on_CoinArea_body_entered"]
