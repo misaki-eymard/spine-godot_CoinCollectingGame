@@ -1,18 +1,18 @@
 extends Node2D
 
-onready var game_over_canvas: CanvasLayer = $GameOverCanvas
+@onready var game_over_canvas: CanvasLayer = $GameOverCanvas
 
-onready var player: KinematicBody2D = $Player
+@onready var player: CharacterBody2D = $Player
 
-onready var coins_total_label: Label = $MainCanvas/CoinsTotal # Label to show collected coins total
+@onready var coins_total_label: Label = $MainCanvas/CoinsTotal # Label to show collected coins total
 
-onready var game_timer: Timer = $GameTimer # Remaining game time
+@onready var game_timer: Timer = $GameTimer # Remaining game time
 
-onready var coin_spawn_points: Node2D = $Level/CoinSpawnPoints
+@onready var coin_spawn_points: Node2D = $Level/CoinSpawnPoints
 
-onready var coin_spawn_points_array = coin_spawn_points.get_children()
+@onready var coin_spawn_points_array = coin_spawn_points.get_children()
 
-onready var coin_spawn_points_count = coin_spawn_points_array.size()
+@onready var coin_spawn_points_count = coin_spawn_points_array.size()
 
 const NormalCoin = preload("res://completed-examples/completed-scenes/completed-NormalCoin.tscn")
 
@@ -84,10 +84,10 @@ func spawn_coin():
 			
 			if coin_types >= generation_probability_of_bomb:
 				# Generate a new  normal coin
-				coin_instance = NormalCoin.instance()
+				coin_instance = NormalCoin.instantiate()
 			elif coin_types < generation_probability_of_bomb:
 				# Generate a new bomb coin
-				coin_instance = BombCoin.instance()
+				coin_instance = BombCoin.instantiate()
 			coin_parent.add_child(coin_instance)
 
 

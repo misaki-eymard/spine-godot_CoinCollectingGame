@@ -1,0 +1,10 @@
+res://default_env.tres
+res://completed-examples/completed-scenes/completed-Main.tscn
+res://resources/spine-skeletons/spineboy/spineboy_dataresource.tres
+res://completed-examples/completed-scenes/completed-BombCoin.tscn
+res://completed-examples/completed-scripts/completed-BombCoin.gd
+res://completed-examples/completed-scenes/completed-Level.tscn
+res://completed-examples/completed-scenes/completed-Platform.tscn
+res://completed-examples/completed-scenes/completed-NormalCoin.tscn
+res://completed-examples/completed-scenes/completed-Player.tscn
+res://completed-examples/completed-scripts/completed-Main.gd

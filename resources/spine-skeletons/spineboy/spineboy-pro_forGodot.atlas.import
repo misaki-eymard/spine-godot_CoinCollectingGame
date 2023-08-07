@@ -2,12 +2,13 @@
 
 importer="spine.atlas"
 type="SpineAtlasResource"
-path="res://.import/spineboy-pro_forGodot.atlas-32df87dcddcdd0de844ec7e5ed5a1841.spatlas"
+uid="uid://cty16i1ycmelt"
+path="res://.godot/imported/spineboy-pro_forGodot.atlas-32df87dcddcdd0de844ec7e5ed5a1841.spatlas"
 
 [deps]
 
 source_file="res://resources/spine-skeletons/spineboy/spineboy-pro_forGodot.atlas"
-dest_files=[ "res://.import/spineboy-pro_forGodot.atlas-32df87dcddcdd0de844ec7e5ed5a1841.spatlas" ]
+dest_files=["res://.godot/imported/spineboy-pro_forGodot.atlas-32df87dcddcdd0de844ec7e5ed5a1841.spatlas"]
 
 [params]
 

@@ -1,14 +1,14 @@
 extends Node2D
 
-onready var coin: SpineSprite = $Coin
+@onready var coin: SpineSprite = $Coin
 
-onready var main = get_tree().get_current_scene().get_node("/root/Main")
+@onready var main = get_tree().get_current_scene().get_node("/root/Main")
 
-onready var bomb_hit_collision = $CoinArea/CollisionShape2D
+@onready var bomb_hit_collision = $CoinArea/CollisionShape2D
 
-onready var coin_area = $CoinArea
+@onready var coin_area = $CoinArea
 
-onready var get_bomb_timer = $GetBombTimer
+@onready var get_bomb_timer = $GetBombTimer
 
 
 func _ready():

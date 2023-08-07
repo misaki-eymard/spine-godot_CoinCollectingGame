@@ -1,14 +1,14 @@
-[gd_resource type="SpineSkeletonDataResource" load_steps=4 format=2]
+[gd_resource type="SpineSkeletonDataResource" load_steps=4 format=3 uid="uid://b11cv0saxii0r"]
 
-[ext_resource path="res://resources/spine-skeletons/spineboy/spineboy-pro_forGodot.atlas" type="SpineAtlasResource" id=1]
-[ext_resource path="res://resources/spine-skeletons/spineboy/spineboy-pro.skel" type="SpineSkeletonFileResource" id=2]
+[ext_resource type="SpineAtlasResource" uid="uid://cty16i1ycmelt" path="res://resources/spine-skeletons/spineboy/spineboy-pro_forGodot.atlas" id="1"]
+[ext_resource type="SpineSkeletonFileResource" uid="uid://bhrwd1twd8ffc" path="res://resources/spine-skeletons/spineboy/spineboy-pro.skel" id="2"]
 
-[sub_resource type="SpineAnimationMix" id=1]
+[sub_resource type="SpineAnimationMix" id="1"]
 from = "death"
 to = "idle"
 
 [resource]
-atlas_res = ExtResource( 1 )
-skeleton_file_res = ExtResource( 2 )
+atlas_res = ExtResource("1")
+skeleton_file_res = ExtResource("2")
 default_mix = 0.1
-animation_mixes = [ SubResource( 1 ) ]
+animation_mixes = [SubResource("1")]

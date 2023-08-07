@@ -2,12 +2,13 @@
 
 importer="spine.skel"
 type="SpineSkeletonFileResource"
-path="res://.import/spineboy-pro.skel-98b17c36638aeb2941960e67db147040.spskel"
+uid="uid://bhrwd1twd8ffc"
+path="res://.godot/imported/spineboy-pro.skel-98b17c36638aeb2941960e67db147040.spskel"
 
 [deps]
 
 source_file="res://resources/spine-skeletons/spineboy/spineboy-pro.skel"
-dest_files=[ "res://.import/spineboy-pro.skel-98b17c36638aeb2941960e67db147040.spskel" ]
+dest_files=["res://.godot/imported/spineboy-pro.skel-98b17c36638aeb2941960e67db147040.spskel"]
 
 [params]
 

@@ -2,12 +2,13 @@
 
 importer="spine.skel"
 type="SpineSkeletonFileResource"
-path="res://.import/coin.skel-2292bbdc8efeed3ffeb57f71b509d84d.spskel"
+uid="uid://biuxptw8yfpau"
+path="res://.godot/imported/coin.skel-2292bbdc8efeed3ffeb57f71b509d84d.spskel"
 
 [deps]
 
 source_file="res://resources/spine-skeletons/coin/coin.skel"
-dest_files=[ "res://.import/coin.skel-2292bbdc8efeed3ffeb57f71b509d84d.spskel" ]
+dest_files=["res://.godot/imported/coin.skel-2292bbdc8efeed3ffeb57f71b509d84d.spskel"]
 
 [params]
 

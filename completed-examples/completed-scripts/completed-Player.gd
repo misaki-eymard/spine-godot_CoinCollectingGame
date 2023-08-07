@@ -1,19 +1,19 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-onready var spine_sprite: SpineSprite = $SpineSprite
+@onready var spine_sprite: SpineSprite = $SpineSprite
 
-onready var spine_sprite_anim_state = spine_sprite.get_animation_state()
+@onready var spine_sprite_anim_state = spine_sprite.get_animation_state()
 
 # These are used to limit the Skeleton's range of movement
-onready var screen_width = get_viewport_rect().size.x
-onready var right_limit = screen_width
-onready var left_limit = 0
+@onready var screen_width = get_viewport_rect().size.x
+@onready var right_limit = screen_width
+@onready var left_limit = 0
 
-export var speed : float = 700 # Movement speed
-export var jump_strength : float = 1700 # Strength to rise above when jumping
-export var gravity : float = 5100 # Gravity from jump to landing on the floor
+@export var speed : float = 700 # Movement speed
+@export var jump_strength : float = 1700 # Strength to rise above when jumping
+@export var gravity : float = 5100 # Gravity from jump to landing on the floor
 
-export var jump_down_threshold : float = 0 # Threshold for velocity to play the "jump_down" animation
+@export var jump_down_threshold : float = 0 # Threshold for velocity to play the "jump_down" animation
 
 const UP_DIRECTION := Vector2.UP
 
@@ -58,7 +58,10 @@ func _physics_process(delta: float) -> void:
 	# Gravity is always added to _velocity.y every delta time
 	_velocity.y += gravity * delta
 	
-	_velocity = move_and_slide(_velocity, UP_DIRECTION)
+	set_velocity(_velocity)
+	set_up_direction(UP_DIRECTION)
+	move_and_slide()
+	_velocity = velocity
 	
 	# Limit the x-axis position so that Player does not move off the screen
 	limit_player_position()

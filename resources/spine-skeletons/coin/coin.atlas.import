@@ -2,12 +2,13 @@
 
 importer="spine.atlas"
 type="SpineAtlasResource"
-path="res://.import/coin.atlas-3ee554ddb0574d1380e5e022c92f785b.spatlas"
+uid="uid://yesg5h66qfev"
+path="res://.godot/imported/coin.atlas-3ee554ddb0574d1380e5e022c92f785b.spatlas"
 
 [deps]
 
 source_file="res://resources/spine-skeletons/coin/coin.atlas"
-dest_files=[ "res://.import/coin.atlas-3ee554ddb0574d1380e5e022c92f785b.spatlas" ]
+dest_files=["res://.godot/imported/coin.atlas-3ee554ddb0574d1380e5e022c92f785b.spatlas"]
 
 [params]
 
